@@ -5,7 +5,7 @@ trigger accountUpd on Account (after insert,after update) {
         if(acc.BillingCity!=NULL  && acc.BillingCity!=trigger.oldmap.get(acc.id).BillingCity)
         {
             AccountList.add(acc.id);
-            //Testing sample
+            //Testing sample1234
         }
     }
     List<Opportunity> Opps = [SELECT id,city__c,AccountId from Opportunity where AccountId IN:AccountList];
